@@ -266,6 +266,7 @@ class LycorisBaseModule(ModuleCustomSD):
             return
         self.org_forward = self.org_module[0].forward
         self.org_module[0].forward = self.forward
+        self.to(device='cuda', dtype=torch.bfloat16)
 
     def restore(self):
         if self.not_supported:
